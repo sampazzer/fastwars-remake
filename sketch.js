@@ -3,13 +3,14 @@ let spawntimer = 3000;
 
 function setup(){
     createCanvas(500,500);
-    background(150);
+    //background(150);
     for(var i = 0; i < 9; i++){
         explosionarray[i] = new explosion(50);
     }
 }
     
 function draw(){
+    background(150);
     let gametimer = millis();
     if (gametimer >= spawntimer){
         console.log("spawn one");
@@ -24,8 +25,8 @@ function draw(){
     }
     
     for (var i = 0; i < 9; i++){
-        //check for collision with mouse. only checks if spawned is true and destroyed is false.
-        explosionarray[i].update(0.1);
+        //check for collision with mouse. only checks if spawned is true and destroyed is false (in explosion.js).
+        explosionarray[i].update(0.5);
         explosionarray[i].collided_with(mouseX,mouseY);
         
     }
