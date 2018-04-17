@@ -16,12 +16,6 @@ class explosion{
         ellipse(this.xpos,this.ypos,this.size);
     }
     
-    noshow(){
-        clear();
-        background(150);
-        //ellipse(this.xpos,this.ypos,this.size);
-    }
-    
     spawn(spawn_called){
         if (spawn_called){
             this.spawned = true;
@@ -35,7 +29,6 @@ class explosion{
             this.distance = dist(mouseyx,mouseyy,this.xpos,this.ypos);
             if(this.distance < collision_distance){
                 this.is_destroyed = true;
-                //this.noshow(); //gets rid of the explosion from the screen if collided with and destroyed.
                 console.log("collided with");
             }
         }
